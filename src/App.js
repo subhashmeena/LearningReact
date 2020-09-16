@@ -45,7 +45,7 @@ function App() {
   });
   return (
     <div className="App">
-      <Search change={handleChange} />
+      <Search change={handleChange} reqparam={searchTerm} />
       <List list={searchedProducts} />  
     </div>
   );
