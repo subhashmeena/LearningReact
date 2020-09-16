@@ -41,7 +41,7 @@ function App() {
   ];
   const searchedProducts = products.filter((k)=>{
     
-      return k.manufacturer.includes(searchTerm);
+      return k.manufacturer.toLowerCase().includes(searchTerm.toLowerCase());
   });
   return (
     <div className="App">
