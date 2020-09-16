@@ -1,16 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const Search = props =>{
-    const handleChange = e=>{
-        e.preventDefault();
-        setSearchTerm(e.target.value);
-    }
     return(
         <div>
             <h1> My Processors List </h1>
             <label htmlFor="search">Search :</label>
-            <input id="search" type="text" onChange={handleChange} />
-            <p> Searching for : <strong>{searchTerm}</strong></p>
+            <input id="search" type="text" onChange={props.change} />
         </div>
         
     )
