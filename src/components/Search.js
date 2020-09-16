@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 const Search = props =>{
-    const [searchTerm,setSearchTerm] = useState('');
     const handleChange = e=>{
         e.preventDefault();
         setSearchTerm(e.target.value);
