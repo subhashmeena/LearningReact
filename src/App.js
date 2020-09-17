@@ -5,7 +5,9 @@ import List from './components/List';
 import Search from './components/Search';
 
 function App() {
-  const [searchTerm, setSearchTerm] = React.useState('');
+  const [searchTerm, setSearchTerm] = React.useState(
+    localStorage.getItem('search') || 'Intel'
+  );
   const handleChange = e=>{e.preventDefault();setSearchTerm(e.target.value);}
   const products= [
     {
@@ -40,9 +42,13 @@ function App() {
     }
   ];
   const searchedProducts = products.filter((k)=>{
-    
       return k.manufacturer.toLowerCase().includes(searchTerm.toLowerCase());
   });
+
+  React.useEffect(()=>{
+    localStorage.setItem('search',searchTerm);
+  },[searchTerm]);
+
   return (
     <div className="App">
       <Search change={handleChange} reqparam={searchTerm} />
